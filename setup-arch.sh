@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-#
-# Script cài đặt môi trường Hyprland + các công cụ liên quan trên Arch Linux
-# Chạy: chmod +x setup-arch.sh && ./setup-arch.sh
-#
 set -euo pipefail
 
 echo "===> Cập nhật hệ thống và cài base-devel + git"
@@ -21,15 +17,6 @@ else
     echo "===> paru đã được cài, bỏ qua"
 fi
 
-# ---------------------------------------------------------------------------
-# Cài các gói từ AUR / repo chính thức qua paru
-# LƯU Ý: đã sửa vài lỗi chính tả so với danh sách gốc của bạn:
-#   - thunar-achive-plugin -> thunar-archive-plugin
-#   - unerar                -> unrar
-#   - awww                  -> swww
-# Kiểm tra lại các gói dưới đây trước khi chạy, một số tên có thể không
-# còn tồn tại hoặc đã đổi tên trên AUR (paru sẽ báo lỗi nếu không tìm thấy).
-# ---------------------------------------------------------------------------
 echo "===> Cài các gói chính"
 paru -S --needed \
     foot hyprland thunar flatpak \
@@ -46,7 +33,7 @@ paru -S --needed \
     cmatrix-git viewnior \
     catppuccin-gtk-theme-mocha \
     neovim cava-git btop-git htop-git \
-    pipes.sh pokemon-colorscripts-git gparted
+    pipes.sh pokemon-colorscripts-git gparted zshrc
 
 echo "===> Cài Spotify + Spicetify"
 paru -S --needed spotify spicetify-bin
